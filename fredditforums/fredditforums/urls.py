@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from freddit import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('freddit/', include('freddit.urls'))
+    path('', views.index, name='index'),
+    path('freddit/', include('freddit.urls')),
+    
 ]

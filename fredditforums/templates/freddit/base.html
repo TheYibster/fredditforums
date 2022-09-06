@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+    <head>
+        <title>Freddit</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    </head>
+
+    <body>
+
+        <div class="banner">
+            <img src="{% static 'images/fred.jpg' %}" alt='Image of Fred'/>
+            <h1>Freddit - a place where you can ask anything!</h1>
+        </div>
+
+        <div class="sidebar">
+            <h2>Popular Posts</h2>
+                {% if threads %}
+                    <ul>
+                        {% for thread in threads %}
+                            <li>{{thread.topic}}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <h4>There are no current Threads</h4>
+                {% endif %}
+        </div>
+
+        <div class="content">
+            {% block body_block %}
+
+            {% endblock %}
+        </div>
+            
+
+    </body>
+
+    <footer>
+
+    </footer>
+
+
+    </html>
