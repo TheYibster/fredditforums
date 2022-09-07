@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block body_block %}
-
-    <a href="/freddit/add_thread">Post</a>
+    <form action="/freddit/add_thread">
+        <input class= "button1" type="submit" value="Post" />
+    </form>
 {% endblock %}

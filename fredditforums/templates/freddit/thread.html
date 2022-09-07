@@ -1,0 +1,24 @@
+{% extends 'freddit/base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+<div class="parent_post">
+    {% if thread %}
+        <h2 id="post_topic">{{thread.topic}}</h2>
+        <p id="post_info">{{thread.inform}}</p>
+        {% if comments %}
+            {% for comment in comments %}
+                <div class="sub_post">
+                    <p>{{comment.comment}}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p id="no_comment_yet">There are currently no responses. Be the first to respond!</p>
+        {% endif %}
+    {% else %}
+        <h1>404: Post not found!</h1>
+    {% endif %}
+ </div>
+
+{% endblock %}

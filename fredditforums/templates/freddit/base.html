@@ -5,14 +5,17 @@
 <html lang="en">
     <head>
         <title>Freddit</title>
-        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
     </head>
 
     <body>
 
         <div class="banner">
-            <img src="{% static 'images/fred.jpg' %}" alt='Image of Fred'/>
-            <h1>Freddit - a place where you can ask anything!</h1>
+            <img src="{% static 'images/fred.jpg' %}" alt='Image of Fred'>
+            <form action="/freddit">
+                <input class= "banner_button" type="submit" value="Freddit - A Place Where You Can Ask Anything!" />
+            </form>
         </div>
 
         <div class="sidebar">
@@ -20,7 +23,7 @@
                 {% if threads %}
                     <ul>
                         {% for thread in threads %}
-                            <li>{{thread.topic}}</li>
+                            <li><a href="/freddit/thread/{{thread.slug}}">{{thread.topic}}</li></a>
                         {% endfor %}
                     </ul>
                 {% else %}

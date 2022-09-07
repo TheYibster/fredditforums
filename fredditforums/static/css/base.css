@@ -2,6 +2,22 @@ body {
     background-color: #212121;
 }
 
+.button1 {
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 25px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    color: deepskyblue;
+    transition-duration: 0.4s;
+}
+
+.button1:hover {
+    color: #fff;
+    background-color: deepskyblue;
+}
+
 .banner {
     display: inline;
     background-color: #121212;
@@ -11,14 +27,7 @@ body {
     overflow: hidden;
     width: 100%;
 }
-.banner h1 {
-    position: relative;
-    left: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 5;
-    color: #fff;
-    text-align: left;
-}
+
 .banner img {
     position: relative;
     top: 2px;
@@ -27,6 +36,17 @@ body {
     height: 75px;
     border-radius: 32px;
     float: left;
+}
+
+.banner_button {
+    position: relative;
+    top: 10px;
+    left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: #fff;
+    background-color: rgba(0,0,0,0);
+    border: 0px;
 }
 
 .sidebar {
@@ -54,10 +74,9 @@ body {
     color: #fff;
 }
 
-#thread_form text {
+#thread_form {
     color: #fff;
     font-size: 25px;
     position: relative;
-    left: 0px;
-    top: 0px;
+    bottom: 10px;
 }
