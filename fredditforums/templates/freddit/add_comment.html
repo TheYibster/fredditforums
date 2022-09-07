@@ -1,0 +1,30 @@
+{% extends 'freddit/base.html' %}
+{% load static %}
+
+{% block body_block %}
+    {% if thread %}
+        <div class="op_post">
+            <h2 class="add_comment_op">{{thread.topic}}</h2>
+            <p class="add_comment_op">{{thread.inform}}</p>
+        </div>
+        <br> 
+        <hr> 
+        <br>
+        <div class="post_comments">
+            <form id="comment form" method="post" action="/freddit/thread/{{thread.slug}}/add_comment/">
+                {% csrf_token %}
+                {% for hidden in comment.hidden_fields %}
+                    {{hidden}}
+                {% endfor %}
+                {% for field in comment.visible_fields %}
+                    {{field.errors}}
+                    {{field.help_text}}
+                    {{field}}
+                {% endfor %}
+                <input class="comment_button" type="submit" name="submit" value="Post">
+            </form>
+        </div>
+    {% else %}
+       <h1>404: Post not found!</h1>
+    {% endif %}
+{% endblock %}

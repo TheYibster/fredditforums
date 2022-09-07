@@ -5,8 +5,13 @@
 
 <div class="parent_post">
     {% if thread %}
-        <h2 id="post_topic">{{thread.topic}}</h2>
-        <p id="post_info">{{thread.inform}}</p>
+        <div class="op_post">
+            <h2 id="post_topic">{{thread.topic}}</h2>
+            <p id="post_info">{{thread.inform}}</p>
+        </div>
+        <br> 
+        <hr> 
+        <br>
         {% if comments %}
             {% for comment in comments %}
                 <div class="sub_post">
@@ -16,6 +21,11 @@
         {% else %}
             <p id="no_comment_yet">There are currently no responses. Be the first to respond!</p>
         {% endif %}
+        <div>
+            <form action="{% url 'add_comment' thread.slug %}">
+                <input class= "button2" type="submit" value="Comment" />
+            </form>
+        </div>
     {% else %}
         <h1>404: Post not found!</h1>
     {% endif %}

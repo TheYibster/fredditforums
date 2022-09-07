@@ -18,6 +18,24 @@ body {
     background-color: deepskyblue;
 }
 
+.button2 {
+    position: relative;
+    left: 85%;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 25px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    color: deepskyblue;
+    transition-duration: 0.4s;
+}
+
+.button2:hover {
+    color: #fff;
+    background-color: deepskyblue;
+}
+
 .banner {
     display: inline;
     background-color: #121212;
@@ -79,4 +97,28 @@ body {
     font-size: 25px;
     position: relative;
     bottom: 10px;
+}
+
+.parent_post {
+    color: white;
+    width: 100%;
+}
+
+.op_post {
+    position: relative;
+    top: 10px;
+    background-color: #212121;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.add_comment_op {
+    color: #fff;
+}
+
+.sub_post {
+    margin: 10px 5px;
+    background-color: #212121;
+    padding: 5px 10px;
+    border-radius: 10px;
 }
