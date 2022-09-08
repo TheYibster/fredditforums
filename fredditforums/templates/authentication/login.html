@@ -1,0 +1,21 @@
+{% extends 'freddit/base.html' %}
+{% load static %}
+
+{% block body_block %}
+    <h1>Login</h1>
+    <br/><br/>
+        <form action="" method=POST>
+            {% csrf_token %}
+            <div>
+                <label for="input-username" style="color: white;">Username:</label>
+                <input id="input-username" name="username" type="text">
+            </div>
+            <br/>
+            <div>
+                <label for="input-pass" style="color: white;">Password:</label>
+                <input type="password" id="input-pass" name="password">
+            </div>
+            <br/>
+            <input type="submit" value="Submit" class="button1">
+        </form>
+{% endblock %}

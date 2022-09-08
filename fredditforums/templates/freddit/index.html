@@ -2,7 +2,31 @@
 {% load static %}
 
 {% block body_block %}
-    <form action="/freddit/add_thread">
-        <input class= "button1" type="submit" value="Post" />
-    </form>
+    <div style="float: left;">
+        <form action="/freddit/add_thread">
+            <input class= "button1" type="submit" value="Post" />
+        </form>
+    </div>
+    {% if user.is_authenticated %}
+    <div style="float: right;">
+        <form action="/freddit/logout_user">
+            <input class= "button1" type="submit" value="Logout" />
+        </form>
+    </div>
+    {% else %}
+    <div style="float: right;">
+        <form action="/freddit/login_user">
+            <input class= "button1" type="submit" value="Login" />
+        </form>
+    </div>
+    <div style="float: right;">
+        <form action="/freddit/register_user">
+            <input class= "button1" type="submit" value="Register" />
+        </form>
+    </div>
+    {% endif %}
+    <br/><br/><br/>
+    <div>
+        <h1>What's Happening today?</h1>
+    </div>
 {% endblock %}

@@ -39,15 +39,14 @@ body {
 .banner {
     display: inline;
     background-color: #121212;
-    position: fixed;
+    position: relative;
     top: 0px;
     left: 0px;
-    overflow: hidden;
     width: 100%;
 }
 
 .banner img {
-    position: relative;
+    position: absolute;
     top: 2px;
     left: 2px;
     width: 75px;
@@ -57,7 +56,7 @@ body {
 }
 
 .banner_button {
-    position: relative;
+    position: absolute;
     top: 10px;
     left: 5px;
     font-family: Arial, Helvetica, sans-serif;
@@ -65,6 +64,12 @@ body {
     color: #fff;
     background-color: rgba(0,0,0,0);
     border: 0px;
+}
+
+.login_button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
 .sidebar {
@@ -88,7 +93,7 @@ body {
     top: 100px;
 }
 
-.content h1 {
+.content * {
     color: #fff;
 }
 
