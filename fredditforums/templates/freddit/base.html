@@ -16,6 +16,11 @@
             <form action="/freddit">
                 <input class= "banner_button" type="submit" value="Freddit - A Place Where You Can Ask Anything!" />
             </form>
+            <form class="search_bar" method="POST" action="{% url 'search' %}">
+                {% csrf_token %}
+                <input class="search" type="search" placeholder="Search" aria-label="Search" name="searched">
+                <button class='button1' type="submit">Search</button>
+            </form>
         </div>
 
         <div class="sidebar">

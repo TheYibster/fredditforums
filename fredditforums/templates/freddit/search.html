@@ -1,0 +1,20 @@
+{% extends 'freddit/base.html' %}
+{% load static %}
+
+{% block body_block %}
+    {% if searched %}
+        <h1>Search Results: {{searched}}</h1>
+        <br/>
+        {% for thread in threads %}
+            <div class="search_results">
+                <a href="{% url 'thread_post' thread.slug%}" class="fill-div">
+                <h2>{{thread.topic}}</h2>
+                <p>{{thread.inform}}</p>
+                </a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1>No results found for (BLANK)</h1>
+    {% endif %}
+
+{% endblock %}

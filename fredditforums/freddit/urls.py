@@ -9,5 +9,7 @@ urlpatterns = [
     path('thread/<thread_slug>/add_comment/', views.add_comment, name="add_comment"),
     path('login_user/', views.login_user, name='login_user'),
     path('logout_user/', views.logout_user, name="logout_user"), 
-    path('register_user/', views.register_user, name="register_user")
+    path('register_user/', views.register_user, name="register_user"),
+    path('search/', views.search, name='search'),
+    
 ]

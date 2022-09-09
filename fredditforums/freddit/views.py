@@ -1,4 +1,5 @@
 from http.client import HTTPResponse
+from django.db.models import Q
 from django.shortcuts import render, redirect
 from freddit.models import Thread, Comment
 from freddit.forms import ThreadForm, CommentForm
@@ -88,3 +89,11 @@ def register_user(request):
     else:
         form = UserCreationForm()
     return render(request, 'authentication/register_user.html', {'form': form})
+
+def search(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        threads = Thread.objects.filter(Q(topic__contains=searched) | Q(inform__contains=searched))
+        return render(request, 'freddit/search.html', {'searched':searched, 'threads': threads})
+    else:
+        return render(request, 'freddit/search.html', {})

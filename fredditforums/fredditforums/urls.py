@@ -22,5 +22,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('freddit/', include('freddit.urls')),
     path('freddit/', include('django.contrib.auth.urls')),
+
     
 ]
