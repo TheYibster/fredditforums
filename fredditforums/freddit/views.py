@@ -27,6 +27,7 @@ def add_comment(request, thread_slug):
                 comment = form.save(commit=False)
                 comment.thread = thread
                 comment.likes = 0
+                comment.author = request.user.username
                 comment.save()
                 return view_thread(request, thread_slug)
         else:
@@ -38,7 +39,9 @@ def add_thread(request):
     if request.method == 'POST':
         form = ThreadForm(request.POST)
         if form.is_valid():
-            form.save(commit=True)
+            thread = form.save(commit=False)
+            thread.author = request.user.username
+            thread.save()
             return index(request)
         else:
             print(form.errors)

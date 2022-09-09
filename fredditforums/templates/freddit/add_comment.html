@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block body_block %}
+
+{% if user.is_authenticated %}
     {% if thread %}
         <div class="op_post">
             <h2 class="add_comment_op">{{thread.topic}}</h2>
@@ -27,4 +29,18 @@
     {% else %}
        <h1>404: Post not found!</h1>
     {% endif %}
+
+{% else %}
+    <h1>Please Sign-in</h1>
+    <div>
+        <form action="/freddit/login_user">
+            <input class= "button1" type="submit" value="Login" />
+        </form>
+    </div>
+    <div>
+        <form action="/freddit/register_user">
+            <input class= "button1" type="submit" value="Register" />
+        </form>
+    </div>
+{% endif %}
 {% endblock %}

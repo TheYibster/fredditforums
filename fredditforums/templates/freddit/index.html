@@ -13,6 +13,9 @@
             <input class= "button1" type="submit" value="Logout" />
         </form>
     </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <h1>Hello {{user.username}}!</h1>
+    </div>
     {% else %}
     <div style="float: right;">
         <form action="/freddit/login_user">
@@ -27,6 +30,6 @@
     {% endif %}
     <br/><br/><br/>
     <div>
-        <h1>What's Happening today?</h1>
+        
     </div>
 {% endblock %}

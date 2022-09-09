@@ -2,22 +2,39 @@
 {% load static %}
 
 {% block body_block %}
-<div>
-    <h1>Start a Thread</h1>
-</div>
-<div class="post">
-    <form id="thread_form" method="post" action="/freddit/add_thread/">
-        {% csrf_token %}
-        {% for hidden in form.hidden_fields %}
-            {{hidden}}
-        {% endfor %}
-        {% for field in form.visible_fields %}
-            {{field.errors}}
-            {{field.help_text}}
-            {{field}}
-        {% endfor %}
-        <br>
-        <input type="submit" name="Submit" value="Post" />
-    </form>
-</div>
+
+{% if user.is_authenticated %}
+    <div>
+        <h1>Start a Thread</h1>
+    </div>
+    <div class="post">
+        <form id="thread_form" method="post" action="/freddit/add_thread/">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{hidden}}
+            {% endfor %}
+            {% for field in form.visible_fields %}
+                {{field.errors}}
+                {{field.help_text}}
+                {{field}}
+            {% endfor %}
+            <br>
+            <input type="submit" name="Submit" value="Post" />
+        </form>
+    </div>
+
+{% else %}
+    <h1>Please Sign-in</h1>
+    <div>
+        <form action="/freddit/login_user">
+            <input class= "button1" type="submit" value="Login" />
+        </form>
+    </div>
+    <div>
+        <form action="/freddit/register_user">
+            <input class= "button1" type="submit" value="Register" />
+        </form>
+    </div>
+{% endif %}
+
 {% endblock %}

@@ -124,6 +124,7 @@ body {
 }
 
 .sub_post {
+    position: relative;
     margin: 10px 5px;
     background-color: #212121;
     padding: 5px 10px;
@@ -131,8 +132,7 @@ body {
 }
 
 .search {
-    width: 250px;
-    height: 10px;
+    width: 50%;
 }
 
 .search_bar {
@@ -169,4 +169,11 @@ a:active{
     background-color: #212121;
     padding: 5px;
     margin: 15px;
+}
+
+.author_by {
+    color: gray;
+    position: absolute;
+    bottom: 0px;
+    right: 25px;
 }

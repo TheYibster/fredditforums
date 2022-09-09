@@ -8,6 +8,7 @@
         <div class="op_post">
             <h2 id="post_topic">{{thread.topic}}</h2>
             <p id="post_info">{{thread.inform}}</p>
+            <p class="author_by">-Posted by {{thread.author}}</p>
         </div>
         <br> 
         <hr> 
@@ -16,6 +17,7 @@
             {% for comment in comments %}
                 <div class="sub_post">
                     <p>{{comment.comment}}</p>
+                    <p class="author_by">-Posted by {{comment.author}}</p>
                 </div>
             {% endfor %}
         {% else %}
