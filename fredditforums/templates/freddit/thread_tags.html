@@ -1,0 +1,10 @@
+<h2>Popular Posts</h2>
+{% if threads %}
+    <ul>
+        {% for t in threads %}
+            <li><a href="{% url 'thread_post' t.slug %}">{{t.topic}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h4>There are no current Threads</h4>
+{% endif %}

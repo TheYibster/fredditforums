@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 {% load static %}
+{% load freddit_extras %}
 
 <html lang="en">
     <head>
@@ -24,21 +25,13 @@
         </div>
 
         <div class="sidebar">
-            <h2>Popular Posts</h2>
-                {% if threads %}
-                    <ul>
-                        {% for thread in threads %}
-                            <li><a href="/freddit/thread/{{thread.slug}}">{{thread.topic}}</li></a>
-                        {% endfor %}
-                    </ul>
-                {% else %}
-                    <h4>There are no current Threads</h4>
-                {% endif %}
+            {% block side_bar %}
+                {% get_thread_list %}
+            {% endblock %}
         </div>
 
         <div class="content">
             {% block body_block %}
-
             {% endblock %}
         </div>
             
